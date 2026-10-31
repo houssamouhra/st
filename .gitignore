@@ -1,3 +1,5 @@
+patches/
 config.def.h
 st
 *.o
+*.orig

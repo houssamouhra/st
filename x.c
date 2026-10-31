@@ -1347,6 +1347,7 @@ xinit(int cols, int rows)
 
 	// Initialize the graphics (image display) module.
 	gr_init(xw.dpy, xw.vis, xw.cmap);
+	boxdraw_xinit(xw.dpy, xw.cmap, xw.draw, xw.vis);
 }
 
 int

@@ -19,6 +19,7 @@
 
 #define TRUECOLOR(r,g,b)	(1 << 24 | (r) << 16 | (g) << 8 | (b))
 #define IS_TRUECOL(x)		(1 << 24 & (x))
+#define HISTSIZE            2000
 
 // This decor color indicates that the fg color should be used. Note that it's
 // not a 24-bit color because the 25-th bit is not set.
@@ -91,6 +92,9 @@ typedef union {
 	const void *v;
 	const char *s;
 } Arg;
+
+void kscrollup(const Arg *);
+void kscrolldown(const Arg *);
 
 void die(const char *, ...);
 void redraw(void);

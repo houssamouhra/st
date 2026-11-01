@@ -828,13 +828,16 @@ cresize(int width, int height)
 	if (height != 0)
 		win.h = height;
 
-	col = (win.w - 2 * borderpx) / win.cw;
-	row = (win.h - 2 * borderpx) / win.ch;
+	col = (win.w - 2 * xpadding) / win.cw;
+	row = (win.h - 2 * ypadding) / win.ch;
 	col = MAX(1, col);
 	row = MAX(1, row);
 
-	win.hborderpx = (win.w - col * win.cw) * anysize_halign / 100;
-	win.vborderpx = (win.h - row * win.ch) * anysize_valign / 100;
+	win.hborderpx = xpadding +
+		(win.w - col * win.cw - 2 * xpadding) * anysize_halign / 100;
+
+	win.vborderpx = ypadding +
+		(win.h - row * win.ch - 2 * ypadding) * anysize_valign / 100;
 
 	tresize(col, row);
 	xresize(col, row);
@@ -978,10 +981,10 @@ xhints(void)
 	sizeh->width = win.w;
 	sizeh->height_inc = 1;
 	sizeh->width_inc = 1;
-	sizeh->base_height = 2 * borderpx;
-	sizeh->base_width = 2 * borderpx;
-	sizeh->min_height = win.ch + 2 * borderpx;
-	sizeh->min_width = win.cw + 2 * borderpx;
+	sizeh->base_height = 2 * ypadding;
+	sizeh->base_width = 2 * xpadding;
+	sizeh->min_height = win.ch + 2 * ypadding;
+	sizeh->min_width = win.cw + 2 * xpadding;
 	if (xw.isfixed) {
 		sizeh->flags |= PMaxSize;
 		sizeh->min_width = sizeh->max_width = win.w;
@@ -1277,8 +1280,8 @@ xinit(int cols, int rows)
 	xloadcols();
 
 	/* adjust fixed window geometry */
-	win.w = 2 * win.hborderpx + 2 * borderpx + cols * win.cw;
-	win.h = 2 * win.vborderpx + 2 * borderpx + rows * win.ch;
+	win.w = 2 * xpadding + cols * win.cw;
+	win.h = 2 * ypadding + rows * win.ch;
 	if (xw.gm & XNegative)
 		xw.l += DisplayWidth(xw.dpy, xw.scr) - win.w - 2;
 	if (xw.gm & YNegative)
@@ -2104,8 +2107,8 @@ xximspot(int x, int y)
 	if (xw.ime.xic == NULL)
 		return;
 
-	xw.ime.spot.x = borderpx + x * win.cw;
-	xw.ime.spot.y = borderpx + (y + 1) * win.ch;
+	xw.ime.spot.x = win.hborderpx + x * win.cw;
+	xw.ime.spot.y = win.vborderpx + (y + 1) * win.ch;
 
 	XSetICValues(xw.ime.xic, XNPreeditAttributes, xw.ime.spotlist, NULL);
 }

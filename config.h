@@ -6,10 +6,12 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Maple Mono NF:pixelsize=18:antialias=true:autohint=true";
-static int borderpx = 2;
 
-static int anysize_halign = 0;
-static int anysize_valign = 0;
+static int xpadding = 10;
+static int ypadding = 2;
+
+static const int anysize_halign = 0;
+static const int anysize_valign = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:

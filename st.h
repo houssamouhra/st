@@ -153,6 +153,7 @@ extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
 extern unsigned int defaultcs;
+extern float alpha_def;
 extern const int boxdraw, boxdraw_bold, boxdraw_braille;
 
 // Accessors to decoration properties stored in `decor`.

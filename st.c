@@ -1098,7 +1098,8 @@ treset(void)
 	for (i = 0; i < 2; i++) {
 		term.screen[i].sc = (TCursor){{
 			.fg = defaultfg,
-			.bg = defaultbg
+			.bg = defaultbg,
+			.decor = DECOR_DEFAULT_COLOR
 		}};
 		term.screen[i].cur = 0;
 		term.screen[i].off = 0;
@@ -2847,7 +2848,7 @@ check_control_code:
 		else if (term.c.state & CURSOR_WRAPNEXT)
 			gp = &TLINE(term.c.y)[term.c.x];
 		else
-			gp = &TLINE(term.c.y)[term.c.x];
+			gp = &TLINE(term.c.y)[term.c.x - 1];
 		if (num && (gp->mode & ATTR_IMAGE)) {
 			unsigned diaccount = tgetimgdiacriticcount(gp);
 			if (diaccount == 0)

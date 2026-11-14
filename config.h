@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Maple Mono NF:pixelsize=18:antialias=true:autohint=true";
+static char *font = "JetBrainsMono NF:pixelsize=18:antialias=true:autohint=true";
 
 static int xpadding = 10;
 static int ypadding = 2;

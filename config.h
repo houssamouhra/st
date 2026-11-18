@@ -13,6 +13,13 @@ static int ypadding = 2;
 static const int anysize_halign = 0;
 static const int anysize_valign = 0;
 
+/* Undercurl styles */
+#define UNDERCURL_CURLY  0
+#define UNDERCURL_SPIKY  1
+#define UNDERCURL_CAPPED 2
+
+#define UNDERCURL_STYLE UNDERCURL_SPIKY
+
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e

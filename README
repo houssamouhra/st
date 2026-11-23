@@ -2,6 +2,7 @@ st - simple terminal
 --------------------
 st is a simple terminal emulator for X which sucks less.
 
+Inspired by Luke Smith's st build.
 
 Requirements
 ------------
@@ -28,7 +29,52 @@ the st terminfo entry with the following command:
 
 See the man page for additional details.
 
+
+Patches
+-------
+- alpha (transparency, adjustable at runtime)
+- anysize
+- boxdraw
+- externalpipe (with externalpipe-eternal)
+- hidecursor
+- ligatures (with boxdraw)
+- scrollback (with mouse wheel support)
+
+The color palette is Tokyo Night.
+
+
+Binds
+-----
+MODKEY is Alt. TERMMOD is Alt+Shift.
+
+Scrolling
+    MODKEY+k / MODKEY+Up         scroll up one line
+    MODKEY+j / MODKEY+Down       scroll down one line
+    MODKEY+u / MODKEY+PageUp     scroll up one page
+    MODKEY+d / MODKEY+PageDown   scroll down one page
+    Shift+PageUp / PageDown      scroll up / down one page
+    Mouse wheel                  scroll
+
+Zoom
+    TERMMOD+k / TERMMOD+Up       zoom in
+    TERMMOD+j / TERMMOD+Down     zoom out
+    TERMMOD+u                    zoom in faster
+    TERMMOD+d                    zoom out faster
+
+Clipboard
+    MODKEY+c                     copy
+    MODKEY+v / Shift+Insert      paste
+
+Transparency
+    MODKEY+a                     more opaque
+    MODKEY+s                     more transparent
+
+External pipe (needs dmenu and xclip)
+    MODKEY+l                     follow a URL on screen
+    MODKEY+y                     copy a URL on screen
+    MODKEY+o                     copy the output of a previous command
+
+
 Credits
 -------
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
-

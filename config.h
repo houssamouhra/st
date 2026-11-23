@@ -8,6 +8,9 @@
 static char *font = "JetBrainsMono NF:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
 
+static const int anysize_halign = 0;
+static const int anysize_valign = 0;
+
 /* Undercurl styles */
 #define UNDERCURL_CURLY  0
 #define UNDERCURL_SPIKY  1

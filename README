@@ -39,6 +39,7 @@ Patches
 - hidecursor
 - ligatures (with boxdraw)
 - scrollback (with mouse wheel support)
+- undercurl (curly underlines)
 
 The color palette is Tokyo Night.
 
